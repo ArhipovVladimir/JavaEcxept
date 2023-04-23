@@ -1,8 +1,7 @@
 package Lesson1_Task_2;
 
-import javax.sound.midi.Soundbank;
+
 import java.util.Random;
-import java.util.logging.SocketHandler;
 
 public class main {
     public static void main(String[] args) {
@@ -30,11 +29,14 @@ public class main {
     }
 
     private static int calculate(int[][] matrix) {
-        if (matrix.length != matrix[0].length) {
-            throw new RuntimeException("массив не квадратный");
-        }
+
         int sum = 0;
-        for (int[] row : matrix) {
+        for (int i = 0; i < matrix.length; i++)
+        {
+            int[] row = matrix[i];
+            if (matrix.length != matrix[i].length) {
+                throw new RuntimeException("массив не квадратный");
+            }
             for (int cell : row) {
                 if (cell != 0 && cell != 1) {
                     throw new RuntimeException("массив не из 0 и 1");
@@ -42,8 +44,8 @@ public class main {
                 sum += cell;
 
             }
-
         }
+
         return sum;
     }
 
