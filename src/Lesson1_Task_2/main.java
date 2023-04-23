@@ -7,14 +7,26 @@ import java.util.logging.SocketHandler;
 public class main {
     public static void main(String[] args) {
         Random rnd = new Random();
-        int matrix[][] = new int[3][2];
+        int matrix[][] = new int[10][10];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] = rnd.nextInt(2);
             }
         }
+        printMatrix(matrix);
         System.out.println(calculate(matrix));
 
+    }
+
+    private static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+
+            }
+            System.out.println();
+
+        }
     }
 
     private static int calculate(int[][] matrix) {
@@ -34,5 +46,6 @@ public class main {
         }
         return sum;
     }
+
 
 }
